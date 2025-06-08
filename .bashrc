@@ -19,7 +19,7 @@ wiki-search() {
     return 1
   fi
 
-  rg -i --color=always --line-number "$1" "$wiki_dir"/*.md |\
+  grep -i --color=always --line-number "$1" "$wiki_dir"/*.md |\
   fzf --ansi \
       --delimiter ':' \
       --preview '
