@@ -25,3 +25,24 @@ blue    = '#ae95c7'
 magenta = '#c795ae'
 cyan    = '#95aec7'
 white   = '#f3f4f5'
+
+[colors.selection]
+#TODO
+
+
+[font]
+normal = {family = "Iosevka", style = "Semibold Extended"}
+bold = {family = "Iosevka", style = "Extrabold Extended"}
+size = 11
+
+[scrolling]
+multiplier = 5
+
+[window]
+padding = {x = 15, y = 20}
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+vi_mode_style = "Beam"
