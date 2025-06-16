@@ -49,3 +49,7 @@ wiki-search() {
       --bind 'k:up' \
       --bind 'j:down'
 }
+
+
+export KEYTIMEOUT=1
+export EDITOR=vim
