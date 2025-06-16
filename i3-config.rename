@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+#set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -152,6 +153,21 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+# === Привязка рабочих столов к конкретным мониторам ===
+workspace 1 output DVI-I-1
+workspace 2 output DVI-I-1
+workspace 3 output DVI-I-1
+workspace 3 output HDMI-DP-0
+workspace 4 output HDMI-DP-0
+workspace 5 output HDMI-D-0
+workspace 6 output HDMI-DP-0
+workspace 7 output HDMI-DP-0
+workspace 8 output HDMI-DP-0
+workspace 9 output HDMI-DP-0
+workspace 10 output HDMI-DP-0
+
+
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -196,6 +212,25 @@ bar {
 	font pango: Fira Code Bold 10
 }
 # Artamonov's changes:
-exec --no-startup-id setxkbmap -layout 'us,ru' -option 'grp:ctrl_shift_toggle'
+#exec --no-startup-id setxkbmap -layout 'us,ru' -option 'grp:ctrl_shift_toggle'
 exec_always --no-startup-id pasystray &
+bindsym $mod+m exec --no-startup-id i3lock
 #exec --no-startup-id volumeicon
+### KUBUNTU settings:
+exec_always --no-startup-id kwriteconfig5 --file kcm_keyboardrc --group "Keyboard Layout" --key "Use" "false"
+exec_always --no-startup-id sh -c "sleep 1 && setxkbmap -layout 'us,ru' -option 'grp:ctrl_shift_toggle'"
+exec_always --no-startup-id killall plasmashell kwin_x11
+#exec_always --no-startup-id setxkbmap -layout 'us,ru' -option 'grp:ctrl_shift_toggle'
+# === ОТКЛЮЧАЕМ KWIN ===
+#exec_always --no-startup-id killall kwin_x11
+#exec_always --no-startup-id kwriteconfig5 --file kwinrc --group Windows --key Enabled false
+#exec_always --no-startup-id qdbus org.kde.KWin /KWin reconfigure
+# === ОТКЛЮЧАЕМ  Виртуальные рабочие столы KDE===
+#exec_always --no-startup-id kwriteconfig5 --file kwinrc --group Desktops --key Number_of_desktops 1
+# Отключаем Plasma Desktop
+#exec_always --no-startup-id killall plasmashell
+#exec_always --no-startup-id kstart5 blitsplash > /dev/null 2>&1
+#workspace_auto_back_and_forth yes
+
+#script for low_brigtness second monitor while inactive
+exec_always --no-startup-id ~/scripts/auto-dark-monitor &
