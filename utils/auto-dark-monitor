@@ -1,0 +1,29 @@
+#!/bin/bash
+
+MONITOR="DP-0"
+TARGET_WORKSPACES=("4" "5" "6" "7")
+
+# Low-brighness настройки 
+BRIGHTNESS_DARK="0.24"
+GAMMA_DARK="0.5:0.5:0.6"
+
+# Default настройки 
+BRIGHTNESS_DEFAULT="1.0" 
+GAMMA_DEFAULT="1.0:1.0:1.0" 
+
+#echo "Исходная яркость: $CURRENT_BRIGHTNESS"
+#echo "Исходная гамма: $CURRENT_GAMMA"
+
+# Бесконечный цикл: check active workspace
+while true; do
+    ACTIVE_WS=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused == true).name')
+
+    if [[ " ${TARGET_WORKSPACES[@]} " =~ " ${ACTIVE_WS} " ]]; then
+        xrandr --output "$MONITOR" --brightness "$BRIGHTNESS_DEFAULT" --gamma "$GAMMA_DEFAULT"
+    else
+        xrandr --output "$MONITOR" --brightness "$BRIGHTNESS_DARK" --gamma "$GAMMA_DARK"
+    fi
+
+    # Ждём немного между проверками
+    sleep 0.5
+done
