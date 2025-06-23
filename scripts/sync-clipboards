@@ -1,0 +1,27 @@
+#!/bin/bash
+
+## Костыль для COPY-PASTE в/из vim + COPY-PASTE между несколькими alacritty
+
+# Инициализируем старые значения
+last_clipboard=""
+last_primary=""
+
+while true; do
+    # Считываем текущие значения буферов
+    clipboard=$(xclip -o -selection clipboard 2>/dev/null)
+    primary=$(xclip -o -selection primary 2>/dev/null)
+
+    # Если CLIPBOARD изменился — обновляем PRIMARY
+    if [ "$clipboard" != "$last_clipboard" ]; then
+        echo -n "$clipboard" | xclip -i -selection primary
+        last_primary="$clipboard"
+    fi
+
+    # Если PRIMARY изменился — обновляем CLIPBOARD
+    if [ "$primary" != "$last_primary" ]; then
+        echo -n "$primary" | xclip -i -selection clipboard
+        last_clipboard="$primary"
+    fi
+
+    sleep 0.2
+done
