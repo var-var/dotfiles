@@ -1,0 +1,98 @@
+[buildPlans.IosevkaCustom]
+family = "Iosevka Custom"
+spacing = "normal"
+serifs = "sans"
+noCvSs = true
+exportGlyphNames = false
+
+  [buildPlans.IosevkaCustom.variants]
+  inherits = "ss15"
+
+    [buildPlans.IosevkaCustom.variants.design]
+    one = "base-long-top-serif"
+    four = "semi-open-serifed"
+    seven = "curly-serifed"
+    eight = "crossing"
+    nine = "open-contour"
+    zero = "oval-reverse-slashed"
+    capital-a = "round-top-serifless"
+    capital-d = "more-rounded-bilateral-serifed"
+    capital-e = "serifed-capped"
+    capital-f = "top-left-serifed"
+    capital-g = "toothed-inward-serifed-hooked"
+    capital-h = "top-left-serifed"
+    capital-i = "short-serifed"
+    capital-j = "flat-hook-serifed-both-sides"
+    capital-k = "symmetric-connected-bottom-right-serifed"
+    capital-l = "motion-serifed"
+    capital-m = "slanted-sides-hanging-motion-serifed"
+    capital-n = "standard-motion-serifed"
+    capital-q = "detached-bend-tailed"
+    capital-r = "curly-top-left-serifed"
+    capital-t = "motion-serifed"
+    capital-u = "toothed-motion-serifed"
+    capital-v = "curly-motion-serifed"
+    capital-w = "straight-motion-serifed"
+    capital-x = "straight-bilateral-motion-serifed"
+    capital-y = "straight-motion-serifed"
+    capital-z = "curly-bottom-serifed"
+    a = "single-storey-tailed"
+    e = "rounded"
+    f = "tailed"
+    g = "double-storey-open"
+    h = "straight-top-left-serifed"
+    k = "curly-top-left-serifed"
+    m = "short-leg-tailed-top-left-serifed"
+    n = "tailed-motion-serifed"
+    p = "eared-motion-serifed"
+    q = "earless-rounded-tailed-serifless"
+    r = "corner-hooked-serifless"
+    s = "unilateral-serifed"
+    t = "bent-hook-asymmetric-short-neck"
+    u = "toothed-motion-serifed"
+    v = "cursive-serifed"
+    w = "curly-almost-flat-top-motion-serifed"
+    x = "semi-chancery-curly-serifless"
+    y = "straight-turn-motion-serifed"
+    z = "cursive"
+    cyrl-u = "cursive-flat-hook-serifless"
+    cyrl-yeri = "cursive"
+    asterisk = "penta-high"
+    ascii-grave = "straight"
+    ascii-single-quote = "raised-comma"
+    paren = "flat-arc"
+    brace = "straight"
+    number-sign = "slanted"
+    ampersand = "closed"
+    at = "fourfold"
+    percent = "rings-continuous-slash-also-connected"
+
+  [buildPlans.IosevkaCustom.ligations]
+  inherits = "clike"
+
+[buildPlans.IosevkaCustom.weights.Regular]
+shape = 400
+menu = 400
+css = 400
+
+[buildPlans.IosevkaCustom.weights.SemiBold]
+shape = 600
+menu = 600
+css = 600
+
+[buildPlans.IosevkaCustom.widths.Normal]
+shape = 600
+menu = 5
+css = "normal"
+
+[buildPlans.IosevkaCustom.slopes.Upright]
+angle = 0
+shape = "upright"
+menu = "upright"
+css = "normal"
+
+[buildPlans.IosevkaCustom.slopes.Italic]
+angle = 9.4
+shape = "italic"
+menu = "italic"
+css = "italic"
