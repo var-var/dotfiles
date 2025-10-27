@@ -1,0 +1,33 @@
+#!/bin/bash
+
+MAC="08:A3:0B:0A:61:82"
+BLUEZ_CARD="bluez_card.08_A3_0B_0A_61_82"
+
+case "$1" in
+    on|connect)
+        echo "🔌 Подключаю AWEI MUSIC..."
+        bluetoothctl connect "$MAC" > /dev/null && \
+        sleep 2 && \
+        systemctl --user restart wireplumber pipewire pipewire-pulse && \
+        sleep 3 && \
+        pactl set-card-profile "$BLUEZ_CARD" a2dp_sink 2>/dev/null && \
+        SINK_ID=$(wpctl status | grep "AWEI MUSIC" | head -1 | awk '{print $1}' | tr -d '●') && \
+        if [ -n "$SINK_ID" ]; then
+            wpctl set-default "$SINK_ID"
+            notify-send "🎧 AWEI MUSIC" "Подключено и выбрано как устройство вывода" -i audio-headphones
+            echo "✅ Готово!"
+        else
+            notify-send "⚠️ AWEI MUSIC" "Подключено, но не найдено в аудиоустройствах" -i dialog-warning
+            echo "❌ Не найдено в wpctl — проверьте plasma-pa"
+        fi
+        ;;
+    off|disconnect)
+        echo "📴 Отключаю AWEI MUSIC..."
+        bluetoothctl disconnect "$MAC" > /dev/null && \
+        notify-send "🎧 AWEI MUSIC" "Отключено" -i audio-headphones
+        ;;
+    *)
+        echo "Использование: awei [on|off]"
+        exit 1
+        ;;
+esac
