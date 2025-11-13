@@ -1,14 +1,14 @@
-[buildPlans.IosevkaCustom]
-family = "Iosevka Custom"
+[buildPlans.IosevkaCode]
+family = "Iosevka Code"
 spacing = "normal"
 serifs = "sans"
 noCvSs = true
 exportGlyphNames = false
 
-  [buildPlans.IosevkaCustom.variants]
+  [buildPlans.IosevkaCode.variants]
   inherits = "ss15"
 
-    [buildPlans.IosevkaCustom.variants.design]
+    [buildPlans.IosevkaCode.variants.design]
     one = "base-long-top-serif"
     four = "semi-open-serifed"
     seven = "curly-serifed"
@@ -16,6 +16,8 @@ exportGlyphNames = false
     nine = "open-contour"
     zero = "oval-reverse-slashed"
     capital-a = "round-top-serifless"
+    capital-b = "standard-unilateral-serifed"
+    capital-c = "serifless"
     capital-d = "more-rounded-bilateral-serifed"
     capital-e = "serifed-capped"
     capital-f = "top-left-serifed"
@@ -27,8 +29,10 @@ exportGlyphNames = false
     capital-l = "motion-serifed"
     capital-m = "slanted-sides-hanging-motion-serifed"
     capital-n = "standard-motion-serifed"
+    capital-p = "closed-motion-serifed"
     capital-q = "detached-bend-tailed"
     capital-r = "curly-top-left-serifed"
+    capital-s = "unilateral-serifed"
     capital-t = "motion-serifed"
     capital-u = "toothed-motion-serifed"
     capital-v = "curly-motion-serifed"
@@ -41,7 +45,9 @@ exportGlyphNames = false
     f = "tailed"
     g = "double-storey-open"
     h = "straight-top-left-serifed"
+    i = "serifed-flat-tailed"
     k = "curly-top-left-serifed"
+    l = "tailed-serifed"
     m = "short-leg-tailed-top-left-serifed"
     n = "tailed-motion-serifed"
     p = "eared-motion-serifed"
@@ -67,31 +73,41 @@ exportGlyphNames = false
     at = "fourfold"
     percent = "rings-continuous-slash-also-connected"
 
-  [buildPlans.IosevkaCustom.ligations]
+  [buildPlans.IosevkaCode.ligations]
   inherits = "clike"
 
-[buildPlans.IosevkaCustom.weights.Regular]
-shape = 400
-menu = 400
-css = 400
+[buildPlans.IosevkaCode.widths.Condensed]
+shape = 456
+menu = 3
+css = "condensed"
 
-[buildPlans.IosevkaCustom.weights.SemiBold]
-shape = 600
-menu = 600
-css = 600
-
-[buildPlans.IosevkaCustom.widths.Normal]
+[buildPlans.IosevkaCode.widths.Normal]
 shape = 600
 menu = 5
 css = "normal"
 
-[buildPlans.IosevkaCustom.slopes.Upright]
+[buildPlans.IosevkaCode.widths.SemiCondensed]
+shape = 548
+menu = 4
+css = "semi-condensed"
+
+[buildPlans.IosevkaCode.widths.SemiExtended]
+shape = 658
+menu = 6
+css = "semi-expanded"
+
+[buildPlans.IosevkaCode.widths.Extended]
+shape = 720
+menu = 7
+css = "expanded"
+
+[buildPlans.IosevkaCode.slopes.Upright]
 angle = 0
 shape = "upright"
 menu = "upright"
 css = "normal"
 
-[buildPlans.IosevkaCustom.slopes.Italic]
+[buildPlans.IosevkaCode.slopes.Italic]
 angle = 9.4
 shape = "italic"
 menu = "italic"
