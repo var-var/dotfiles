@@ -58,3 +58,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"
+
+#history settings
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+export HISTCONTROL="ignoreboth:erasedups"
+shopt -s histappend
+export PROMPT_COMMAND="history -a"
+#export HISTIGNORE="ls:ls *:pwd:cd:cd ~:exit:&:shutdown:reboot:poweroff:halt:init 0:init 6:systemctl poweroff:systemctl reboot"
+#"export HISTIGNORE="ls:ls *:pwd:cd:cd ~:exit:&:shutdown *:reboot *:poweroff:halt:init 0:init 6:systemctl poweroff:systemctl reboot:history:sudo reboot * sudo shutdown *"
+export HISTIGNORE="&:exit:halt:reboot:shutdown"
+
+#alises
+alias calendar='khal calendar'
